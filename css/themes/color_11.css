@@ -11,7 +11,7 @@ www.typeandgrids.com
 body { background-color: #262626; }
 /*body { background: url("../../images/backgrounds/bg_01.png") repeat; }*/
 .thumbnailMask { background-image: url("../../images/masks/262626_01.png"); }
-header { border-color: #262626; }
+header { border-color: #f8c900; }
 #logo h1, #logoDetailView h1 { color: #eeeeee; }
 #logo h2, #logoDetailView h2 { color: #dddddd; }
 nav ul li a, nav ul li a:visited, nav ul li button { color: #f8c900; }
