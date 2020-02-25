@@ -3911,7 +3911,7 @@ input, select, textarea {
 		  }
 		  
 		  /* Container around content */
-		  .container {
+		  .containert {
 			padding: 10px 40px;
 			position: relative;
 			background-color: inherit;
@@ -3919,7 +3919,7 @@ input, select, textarea {
 		  }
 		  
 		  /* The circles on the timeline */
-		  .container::after {
+		  .containert::after {
 			content: '';
 			position: absolute;
 			width: 25px;
@@ -3991,14 +3991,14 @@ input, select, textarea {
 			}
 		  
 		  /* Full-width containers */
-			.container {
+			.containert {
 			  width: 100%;
 			  padding-left: 70px;
 			  padding-right: 25px;
 			}
 		  
 		  /* Make sure that all arrows are pointing leftwards */
-			.container::before {
+			.containert::before {
 			  left: 60px;
 			  border: medium solid white;
 			  border-width: 10px 10px 10px 0;
