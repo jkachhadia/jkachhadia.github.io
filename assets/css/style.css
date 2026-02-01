@@ -1,0 +1,1143 @@
+:root {
+    --bg-color: #000a12;
+    /* Deep Blue Black */
+    --card-bg: #1a222c;
+    --text-primary: #ffffff;
+    --text-secondary: #aeb4b9;
+    --accent: #0064FF;
+    /* Paramount+ Blue */
+    --accent-hover: #004ecc;
+    --font-main: 'Avenir', 'Inter', sans-serif;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: none;
+}
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+body {
+    background: radial-gradient(circle at 50% 0%, #001f3f 0%, #000a12 60%);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    opacity: 0.15;
+    mix-blend-mode: screen;
+}
+
+/* Nav */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0, 10, 18, 0.9) 0%, rgba(0, 10, 18, 0));
+    z-index: 1000;
+    padding: 20px 4%;
+    transition: background-color 0.4s;
+    display: flex;
+    /* Fixed layout issue */
+    justify-content: center;
+    /* Center content like P+ usually does or wide */
+}
+
+nav.scrolled {
+    /* Real Glassmorphism */
+    background: rgba(0, 10, 18, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Container fluid needed inside nav */
+nav .container-fluid {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.logo {
+    color: var(--accent);
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+@media(max-width: 768px) {
+    .logo {
+        font-size: 1.2rem;
+        /* Mobile Logo Size Fix */
+    }
+
+    nav {
+        padding: 15px 4%;
+    }
+
+    .nav-links {
+        display: none;
+        /* Hide standard nav on mobile for now to prevent overlap */
+    }
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #e5e5e5;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: white;
+    font-weight: 600;
+}
+
+.btn-nav {
+    background: transparent;
+}
+
+/* Hubs / Brands Row (Specific to P+) */
+.brand-hub-row {
+    padding: 30px 2%;
+    display: flex;
+    gap: 1vw;
+    justify-content: center;
+    margin-top: -60px;
+    /* Overlap billboard slightly */
+    z-index: 50;
+    position: relative;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.brand-card {
+    background: linear-gradient(135deg, #002d5c 0%, #001225 100%);
+    flex: 1;
+    max-width: 22vw;
+    min-width: 150px;
+    height: 10vw;
+    min-height: 80px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.brand-card:hover {
+    transform: scale(1.05);
+    border-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 100, 255, 0.2);
+    z-index: 2;
+}
+
+.brand-title {
+    font-size: 1.4vw;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+@media(max-width: 768px) {
+    .brand-hub-row {
+        justify-content: flex-start;
+        /* Left align scroll on mobile */
+        padding-left: 4%;
+    }
+
+    .brand-card {
+        min-width: 140px;
+        height: 80px;
+    }
+
+    .brand-title {
+        font-size: 0.9rem;
+    }
+}
+
+/* Billboard Hero - Centered */
+.billboard {
+    height: 90vh;
+    height: 100dvh;
+    /* Mobile robustness */
+    /* Taller */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centered */
+    justify-content: center;
+    text-align: center;
+    /* Centered text */
+    padding: 0 4%;
+    background: linear-gradient(to bottom, rgba(0, 10, 18, 0.3) 0%, rgba(0, 10, 18, 1) 100%), url('../images/Jay_Pro.png');
+    background-size: cover;
+    background-position: center top;
+}
+
+.billboard-content {
+    max-width: 800px;
+    z-index: 10;
+    margin-top: 0;
+    /* Remove top offset for center */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-logo {
+    font-size: 5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(0, 100, 255, 0.4);
+    background: none;
+    /* Remove gradient text for solid impact */
+    -webkit-text-fill-color: initial;
+}
+
+.meta-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #a3a3a3;
+    font-size: 1.1rem;
+}
+
+.match-score {
+    color: #46d369;
+    /* Keep green for contrast or switch to blue? Green implies "match" better */
+}
+
+.maturity-rating {
+    border: 1px solid #a3a3a3;
+    padding: 2px 6px;
+    font-size: 0.8rem;
+}
+
+.quality {
+    border: 1px solid #a3a3a3;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+}
+
+.synopsis {
+    font-size: 1.3rem;
+    color: #e1e1e1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    max-width: 700px;
+    margin-bottom: 2rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-play {
+    background: var(--accent);
+    /* Blue Button */
+    color: white;
+    font-size: 1.2rem;
+    padding: 1rem 3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-play:hover {
+    background: #007bff;
+    opacity: 1;
+    transform: scale(1.02);
+    color: white;
+}
+
+@keyframes pulse-btn {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 100, 255, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 100, 255, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 100, 255, 0);
+    }
+}
+
+.btn-play {
+    animation: pulse-btn 3s infinite;
+}
+
+.btn-more {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white !important;
+    /* Force white text */
+    font-size: 1.2rem;
+    padding: 1rem 3rem;
+    border-radius: 4px;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.2s;
+}
+
+.btn-more:hover {
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+}
+
+.billboard-vignette {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10rem;
+    background: linear-gradient(180deg, transparent, rgba(20, 20, 20, 1));
+}
+
+/* Content Rows */
+.main-view {
+    position: relative;
+    top: -100px;
+    /* Slight overlap with billboard like Netflix */
+    z-index: 20;
+    padding-bottom: 50px;
+}
+
+.content-row {
+    margin-bottom: 3vw;
+    padding-left: 4%;
+    /* Animation temporarily disabled for stability */
+    /* opacity: 0; */
+    /* transform: translateY(20px); */
+    /* transition: opacity 0.8s ease-out, transform 0.8s ease-out; */
+}
+
+.content-row.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Content Rows - Titles */
+.row-title {
+    color: #aad4ff;
+    /* Light Blue tint */
+    font-weight: 700;
+    text-transform: uppercase;
+    /* P+ style */
+    letter-spacing: 0.5px;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+.row-container {
+    position: relative;
+}
+
+.row-slider {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px 0;
+    padding-right: 4%;
+    scroll-behavior: smooth;
+}
+
+/* "Ken Burns" Effect (Slow Zoom) */
+@keyframes slowZoom {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+.poster-card {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    /* Critical for zoom effect */
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* Card pop */
+    cursor: pointer;
+    /* Restore Fixed Dimensions */
+    flex: 0 0 auto;
+    width: 250px;
+    height: 140px;
+    background: #1a1a1a;
+}
+
+.poster-card:hover {
+    transform: scale(1.05);
+    z-index: 10;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+/* Apply zoom to background specifically */
+.bg-zoom-target {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 8s ease;
+    /* Smooth slow zoom */
+    z-index: 0;
+}
+
+.poster-card:hover .bg-zoom-target {
+    transform: scale(1.15);
+}
+
+.poster-content {
+    position: relative;
+    z-index: 2;
+    /* Ensure text stays above background */
+    padding: 30px 10px 10px 10px;
+    /* Increased top padding for badge safety */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0.95) 100%);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* Unique Movie Poster Classes */
+/* Unused classes removed */
+
+.bg-poster-polibert {
+    background-image: url('../images/poster-polibert.png');
+}
+
+.bg-poster-hack {
+    background-image: url('../images/poster-hack.png');
+}
+
+.bg-poster-impact {
+    background-image: url('../images/poster-impact.png');
+}
+
+.bg-poster-citations {
+    background-image: url('../images/poster-research-citations.png');
+}
+
+.bg-poster-manager {
+    background-image: url('../images/poster-manager.png');
+}
+
+.bg-poster-airflow {
+    background-image: url('../images/poster-airflow.png');
+}
+
+.bg-poster-mentor {
+    background-image: url('../images/poster-mentor.png');
+}
+
+.bg-poster-alumni {
+    background-image: url('../images/poster-alumni.png');
+}
+
+.bg-poster-engineer {
+    background-image: url('../images/poster-engineer.png');
+}
+
+.bg-poster-speech {
+    background-image: url('../images/poster-speech.png');
+}
+
+.bg-poster-ds-miami {
+    background-image: url('../images/poster-talk-ds-miami.png');
+}
+
+.bg-poster-ds-ua {
+    background-image: url('../images/poster-talk-ds-ua.png');
+}
+
+.bg-poster-codebasics {
+    background-image: url('../images/poster-talk-codebasics.png');
+}
+
+.bg-poster-fullstack {
+    background-image: url('../images/poster-talk-fullstack.png');
+}
+
+.bg-poster-national-medals {
+    background-image: url('../images/poster-award-national-medals.png');
+}
+
+.bg-poster-swamphacks {
+    background-image: url('../images/poster-award-swamphacks.png');
+}
+
+.bg-poster-makeharvard {
+    background-image: url('../images/poster-award-makeharvard-judge.png');
+}
+
+.bg-poster-dataiku {
+    background-image: url('../images/poster-award-dataiku.png');
+}
+
+.bg-poster-edu-syracuse-wide {
+    background-image: url('../images/poster_edu_syracuse_wide_1769984762773.png');
+}
+
+.bg-poster-education-nitsurat {
+    background-image: url('../images/poster_education_nitsurat_1769963283810.png');
+}
+
+.bg-poster-edu-syracuse {
+    background-image: url('../images/poster-edu-syracuse.png');
+}
+
+.bg-poster-edu-nitsurat {
+    background-image: url('../images/poster-edu-nitsurat.png');
+}
+
+.bg-poster-media-refresh {
+    background-image: url('../images/poster-media-refresh-miami.png');
+}
+
+.bg-poster-media-towards-ds {
+    background-image: url('../images/poster-media-towards-ds.png');
+}
+
+.bg-poster-media-iot {
+    background-image: url('../images/poster-media-iot-world.png');
+}
+
+.bg-poster-writing-fullstack {
+    background-image: url('../images/poster-writing-fullstack.png');
+}
+
+/* Top 10 Badge */
+.rank-number {
+    position: absolute;
+    bottom: -15px;
+    left: -20px;
+    font-size: 6rem;
+    font-weight: 900;
+    color: #000;
+    -webkit-text-stroke: 2px #555;
+    /* Outline look */
+    z-index: 20;
+    font-family: 'Impact', 'Inter', sans-serif;
+    letter-spacing: -5px;
+    line-height: 1;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Card Backgrounds */
+.bg-data {
+    background: linear-gradient(rgba(0, 10, 24, 0.7), rgba(0, 10, 24, 0.9)), url('../images/hub-data.png') !important;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(0, 100, 255, 0.3);
+}
+
+.bg-strategy {
+    background: linear-gradient(rgba(0, 10, 24, 0.7), rgba(0, 10, 24, 0.9)), url('../images/hub-strategy.png') !important;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.bg-eng {
+    background: linear-gradient(rgba(0, 10, 24, 0.7), rgba(0, 10, 24, 0.9)), url('../images/hub-eng.png') !important;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(0, 255, 100, 0.2);
+}
+
+.bg-creative {
+    background: linear-gradient(rgba(0, 10, 24, 0.7), rgba(0, 10, 24, 0.9)), url('../images/hub-creative.png') !important;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(200, 0, 255, 0.3);
+}
+
+/* Hover effects for bg cards */
+.bg-data:hover,
+.bg-strategy:hover,
+.bg-eng:hover,
+.bg-creative:hover {
+    background-blend-mode: overlay;
+    background-color: rgba(0, 10, 24, 0.4) !important;
+    box-shadow: 0 10px 40px rgba(0, 100, 255, 0.3);
+}
+
+/* Link Utilities */
+.no-link-style {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.no-link-style:hover {
+    color: inherit;
+    /* Let the card hover effect take over */
+}
+
+/* Specific Card Styles */
+.highlight-card {
+    background: linear-gradient(135deg, #1c1c1c 0%, #303030 100%);
+    border: 1px solid #444;
+}
+
+.top-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--accent);
+    color: white;
+    font-size: 0.6rem;
+    padding: 4px 8px;
+    /* Bigger touch target */
+    font-weight: 800;
+    border-bottom-right-radius: 4px;
+    z-index: 20;
+    /* Ensure on top */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Accessibility Focus States */
+a:focus-visible,
+button:focus-visible,
+.poster-card:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+.stat-big {
+    font-size: 2rem;
+    font-weight: 900;
+    color: white;
+}
+
+.stat-detail {
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+/* Project Posters */
+.project-poster {
+    width: 200px;
+    height: 300px;
+    /* Portrait Ratio */
+    background: #000;
+}
+
+.poster-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 4rem;
+}
+
+.poster-hover {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.poster-card:hover .poster-hover {
+    opacity: 1;
+}
+
+.poster-card {
+    cursor: pointer;
+}
+
+.poster-hover h4 {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.meta-row {
+    font-size: 0.7rem;
+    color: #46d369;
+    margin-bottom: 5px;
+    font-weight: 700;
+    display: flex;
+    gap: 10px;
+}
+
+.poster-hover p {
+    font-size: 0.7rem;
+    color: #ccc;
+    line-height: 1.2;
+}
+
+/* Wide Posters (Talks/XP) */
+.wide-poster {
+    width: 280px;
+    height: 160px;
+    background: #333;
+    border: 1px solid #555;
+}
+
+.wide-poster:hover {
+    border-color: white;
+}
+
+.badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--accent);
+    color: white;
+    font-size: 0.6rem;
+    padding: 4px 8px;
+    font-weight: 800;
+    border-bottom-right-radius: 4px;
+    z-index: 20;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.tags span {
+    font-size: 0.6rem;
+    margin-right: 5px;
+    border: 1px solid #666;
+    padding: 1px 4px;
+    color: #aaa;
+}
+
+/* Mobile - Additional Fixes */
+@media (max-width: 768px) {
+    .title-logo {
+        font-size: 2.5rem;
+    }
+
+    .billboard {
+        height: 100dvh;
+        padding-top: 60px;
+        /* Offset for fixed nav */
+    }
+
+    .billboard-content {
+        width: 100%;
+    }
+
+    .row-title {
+        font-size: 1rem;
+    }
+
+    .poster-card:hover {
+        transform: scale(1.05);
+        /* Less aggressive on touch */
+    }
+}
+
+/* Footer Brand Colors - Targeted correctly */
+.social-links a:hover .fa-linkedin {
+    color: #0077b5;
+}
+
+.social-links a:hover .fa-github {
+    color: #ffffff;
+}
+
+.social-links a:hover .fa-medium {
+    color: #00ab6c;
+}
+
+.social-links a:hover .fa-envelope {
+    color: #ea4335;
+}
+
+/* Ensure icons transition */
+.social-links i {
+    transition: color 0.3s ease;
+}
+
+/* -------------------------------------------------- */
+/* V13: Netflix-Style Detail Modal
+/* -------------------------------------------------- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-card {
+    background: #181818;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    transform: scale(0.9);
+    transition: transform 0.3s cubic-bezier(0.2, 1, 0.2, 1);
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-overlay.active .modal-card {
+    transform: scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.modal-close:hover {
+    background: #fff;
+    color: #000;
+}
+
+.modal-hero {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    /* Default fallback gradient if no image */
+    background: linear-gradient(to bottom, #2a2a2a, #181818);
+}
+
+.modal-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, #181818, transparent);
+}
+
+.modal-hero-content {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 2;
+    width: 80%;
+}
+
+.modal-hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    line-height: 1.1;
+}
+
+.modal-meta {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #a3a3a3;
+}
+
+.modal-meta .match-score {
+    color: #46d369;
+}
+
+.modal-info {
+    padding: 0 40px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.modal-info p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fff;
+    max-width: 90%;
+}
+
+.modal-actions .btn-play {
+    display: inline-flex;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+}
+
+/* Mobile Responsive Modal */
+@media (max-width: 768px) {
+    .modal-hero {
+        height: 250px;
+    }
+
+    .modal-hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .modal-info {
+        padding: 0 20px 30px 20px;
+    }
+
+    .modal-hero-content {
+        left: 20px;
+        bottom: 20px;
+    }
+}
+
+/* Intro & Profile Gate */
+#intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s ease-out;
+}
+
+#intro-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.intro-title {
+    color: var(--accent);
+    /* Blue match */
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+    font-size: 8vw;
+    letter-spacing: 1px;
+    opacity: 0;
+    transform: scale(4);
+    animation: cinematic-intro 3s ease-out forwards;
+}
+
+@keyframes cinematic-intro {
+    0% {
+        opacity: 0;
+        transform: scale(4);
+        filter: blur(10px);
+    }
+
+    20% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+}
+
+/* Profile Gate */
+#profile-gate {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #141414;
+    /* Streaming dark grey */
+    opacity: 0;
+    transition: opacity 1s ease-in;
+    pointer-events: none;
+    /* Block clicks until active */
+}
+
+#profile-gate.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.profile-container {
+    text-align: center;
+    animation: fade-up 0.8s ease-out;
+}
+
+.gate-title {
+    color: #fff;
+    font-size: 3.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+.profiles-row {
+    display: flex;
+    gap: 2vw;
+    justify-content: center;
+}
+
+.profile-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.profile-item:hover {
+    transform: scale(1.05);
+    /* Slight grow */
+}
+
+.avatar {
+    width: 10vw;
+    height: 10vw;
+    min-width: 100px;
+    min-height: 100px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    /* Classic streaming curve */
+    border: 3px solid transparent;
+    /* Invite border */
+    transition: border-color 0.2s;
+}
+
+.profile-item:hover .avatar {
+    border-color: #fff;
+    /* Highlight on hover */
+}
+
+.profile-name {
+    color: #808080;
+    font-size: 1.2rem;
+    transition: color 0.2s;
+}
+
+.profile-item:hover .profile-name {
+    color: #fff;
+}
+
+.manage-btn {
+    margin-top: 3rem;
+    border: 1px solid #808080;
+    display: inline-block;
+    padding: 10px 30px;
+    color: #808080;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    cursor: not-allowed;
+    /* Just for show */
+    opacity: 0.5;
+}
+
+.manage-btn:hover {
+    color: #fff;
+    border-color: #fff;
+    opacity: 1;
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Hide content initially to prevent flash */
+body.noscroll {
+    overflow: hidden;
+}

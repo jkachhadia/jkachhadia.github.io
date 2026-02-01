@@ -1,243 +1,581 @@
-<!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-169125621-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-169125621-1');
+    </script>
 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Jay Kachhadia - Data Science Leader driving $1B+ in content strategy. Expert in Machine Learning, AI, and Engineering at Paramount+.">
+    <meta name="keywords"
+        content="Jay Kachhadia, Data Science, Machine Learning, AI, Paramount+, Data Engineering, Strategy, Portfolio">
+    <meta name="author" content="Jay Kachhadia">
+    <title>Jay Kachhadia | Data Science Leader & Strategist</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-<html>
-	<head>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-169125621-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Open Graph / Social Media Metatags -->
+    <meta property="og:title" content="Jay Kachhadia | Data Science Leader & Strategist">
+    <meta property="og:description"
+        content="Driving $1B+ in content investment decisions. Explore the intersection of Data Science, AI, and Creative Strategy.">
+    <meta property="og:image" content="https://jkachhadia.github.io/assets/images/Jay_Pro.png">
+    <meta property="og:url" content="https://jkachhadia.github.io">
+    <meta property="og:type" content="website">
 
-  gtag('config', 'UA-169125621-1');
-</script>
-					<meta charset="utf-8">
-					<meta name="Description" CONTENT="Jay Kachhadia -  Data Scientist">
-					<meta name="robots" content="noindex,nofollow">
-		<title>Jay Kachhadia</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Local Override for fast test */
+        .logo {
+            color: #0064FF !important;
+        }
+    </style>
+</head>
 
-		<!-- Sidebar -->
-			<section id="sidebar">
-				<div class="inner">
-					<nav>
-						<ul>
-							<li><a href="#intro">About me</a></li>
-							<li><a href="#one">Experience</a></li>
-							<li><a href="#two">Projects</a></li>
-							<li><a href="#medium_wrap">Blogs</a></li>
-							<li><a href="#three">Education</a></li>
-						</ul>
-					</nav>
-				</div>
-			</section>
+<body>
+    <!-- Intro Overlay & Profile Gate -->
+    <div id="intro-overlay">
+        <div id="intro-animation">
+            <h1 class="intro-title">JAY KACHHADIA</h1>
+        </div>
+        <div id="profile-gate" class="hidden">
+            <div class="profile-container">
+                <h1 class="gate-title">Who's Watching?</h1>
+                <div class="profiles-row">
+                    <!-- Recruiter -->
+                    <div class="profile-item" onclick="enterSite('Recruiter')">
+                        <div class="avatar"
+                            style="background-image: url('assets/images/profile_recruiter_clay_1769987057059.png');">
+                        </div>
+                        <span class="profile-name">Recruiter</span>
+                    </div>
+                    <!-- Technologist -->
+                    <div class="profile-item" onclick="enterSite('Technologist')">
+                        <div class="avatar"
+                            style="background-image: url('assets/images/profile_technologist_clay_1769987068849.png');">
+                        </div>
+                        <span class="profile-name">Technologist</span>
+                    </div>
+                    <!-- Stalker -->
+                    <div class="profile-item" onclick="enterSite('Stalker')">
+                        <div class="avatar"
+                            style="background-image: url('assets/images/profile_stalker_clay_1769987081270.png');">
+                        </div>
+                        <span class="profile-name">Stalker</span>
+                    </div>
+                    <!-- Guest -->
+                    <div class="profile-item" onclick="enterSite('Guest')">
+                        <div class="avatar"
+                            style="background-image: url('assets/images/profile_guest_clay_1769987093379.png');"></div>
+                        <span class="profile-name">Guest</span>
+                    </div>
+                </div>
+                <!-- Manage Profiles (Just for show) -->
+                <div class="manage-btn">MANAGE PROFILES</div>
+            </div>
+        </div>
+    </div>
+    <nav>
+        <div class="container-fluid">
+            <a href="#" class="logo">JAY KACHHADIA</a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#trending">Trending</a></li>
+                <li><a href="#speaking">Live Events</a></li>
+                <li><a href="#experience">My List</a></li>
+                <li><a href="/resume/resume.pdf" class="btn-nav">Resume</a></li>
+            </ul>
+        </div>
+    </nav>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    <canvas id="bg-canvas"></canvas>
 
-				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up" >
-						<div class="inner" >
-							<h1>Jay Kachhadia</h1>
-							<p>A Data Scientist building intelligent data products<br />
-								and a DS blogger with 100K+ views.
-							</p>
-							<ul class="icons">
-								<li><a href="https://www.twitter.com/jaykachhadia21" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="https://www.fb.com/jkachhadia" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="https://www.github.com/jkachhadia" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="https://www.medium.com/@jkachhadia" class="icon brands fa-medium"><span class="label">Medium</span></a></li>
-								<li><a href="https://www.linkedin.com/in/jkachhadia" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-								<li><a href="mailto:kachhadiajay@gmail.com" class="icon fa-envelope"><span class="label">gmail</span></a></li>
-							</ul>
-							<ul class="actions">
-									<a href="/resume/resume.pdf" class="button icon solid fa-download">Resume</a>
-								<li><a href="#one" class="button scrolly">My Journey?</a></li>
-							</ul>
-						</div>
-					</section>
+    <!-- Billboard Hero -->
+    <header id="home" class="billboard">
+        <div class="billboard-content">
+            <div class="title-logo">THE DATA SCIENTIST</div>
+            <div class="meta-info">
+                <span class="match-score">98% Match</span>
+                <span class="year">2026</span>
+                <span class="maturity-rating">10+ Years</span>
+                <span class="duration">5 Seasons</span>
+                <span class="quality">4K Ultra HD</span>
+            </div>
+            <p class="synopsis">In a world of unstructured data, one man bridges the gap between Creative VFX and
+                Machine Learning. Watch as he drives $1B+ in content investment decisions using advanced predictive
+                algorithms.</p>
+            <div class="action-buttons">
+                <a href="/resume/resume.pdf" class="btn-play"><i class="fas fa-play"></i> Watch Resume</a>
+                <a href="#about" class="btn-more"><i class="fas fa-info-circle"></i> More Info</a>
+            </div>
+        </div>
+        <div class="billboard-vignette"></div>
+    </header>
 
-				<!-- One -->
-					<section id="one" class="wrapper style2 spotlights">
-							<section>
-									<a href="https://www.viacomcbs.com" class="image"><img src="images/viacomcbs.png" alt="" data-position="center center" /></a>
-									<div class="content">
-										<div class="inner">
-											<h2>Data Scientist</h2>
-											<p> <i>ViacomCBS Streaming</i> <br>
-												Building Data Products powered by Machine Learning from ideation to development to deployment.</br>
-												<span style="color:white;padding:0">June 2020 - Present</span>
-											</p>
-											
-												
-										</div>
-									</div>
-								</section>
-						<section>
-							<a href="https://ccds.ischool.syr.edu" class="image"><img src="images/ischool1.png" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>ML Research Assistant</h2>
-									<p>Built data pipelines and productionalized machine learning models for a <a href="https://knightfoundation.org">Knight Foundation</a> funded project 'Illuminating' using Apache airflow, Pytorch and Spark.
-									</br>
-									<span style="color:white;padding:0">Aug 2018 - May 2020</span></p>
-									<ul class="actions">
-										<li><a href="https://illuminating.ischool.syr.edu/" class="button">website</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-								<a href="https://www.viacomcbs.com/brand/cbs-interactive" class="image"><img src="images/cbs_interactive.png" alt="" data-position="center center" /></a>
-								<div class="content">
-									<div class="inner">
-										<h2>Data Engineering Intern</h2>
-										<p>Built an Anomaly detection system for CBS sites beating Adobe Sensei by 18.26% and state-of-the-art Subscription Abuse (password sharing) detection algorithms for CBS All Access using Neural Networks on graphs.</br>
-											<span style="color:white;padding:0">Jun 2019 - Aug 2019</span>
-										</p>
-										
-											
-									</div>
-								</div>
-							</section>
-						<section>
-							<a href="https://www.iihs.co.in" class="image"><img src="images/iihs.png" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Data Science Intern</h2>
-									<p>Built machine learning and computer vision tools for automatic land use land cover classification from Landsat 8 satellite imagery using PyQt and neural networks for <a href="https://www.undp.org/content/undp/en/home.html">United Nations Development Program</a> to plan 7 sustainable cities in India.
-									</br>
-									<span style="color:white;padding:0">May 2017 - Jul 2017</span></p>
-									<ul class="actions">
-										<li><a href="https://drive.google.com/file/d/1QERghn6QFodoOxBbLRC9hcLsob6k5RXU/view" class="button">Research Paper</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						
+    <div class="main-view">
 
-				<!-- Two -->
-					<section id="two" class="wrapper style3 fade-up">
-						<div class="inner">
-							<h2>Projects</h2>
-							<p></p>
-							<div class="features">
-								<section>
-	
-									<h3>C-REX, A Graph-based Recommendation Engine​ <span class="icon solid fa-star"></span> CBS Hack Day 2019 Winner</h3>
-									<ul>
-										<li>Built a graph-based hyper-personalized recommendation engine connecting 3rd Party shows with CBS shows</li>
-										<li>Developed a multi-dimensional recommendation space for shows and user personas using Neural Networks(Node2Vec)</li></ul>
-								</section>
-								<section>
-	
-										<h3>Big Data, Big Money <a href="https://github.com/jkachhadia/big-data-big-money" class="icon brands fa-github" style="color:black"><span class="label">GitHub</span></a></h3>
-										<ul>
-											<li>Performed Time Series Analysis and modeling on 7 million records of 6000 stocks of US markets using Spark</li>
-											<li>Developed a LSTM time-series model to predict investment returns for making calculated decisions involving minimal risk</li></ul>
-									</section>
-								<section>
-	
-										<h3>Indian Premier League Game Predictions​ <a href="https://www.github.com/jkachhadia/ipl-predict" class="icon brands fa-github" style="color:black"><span class="label">GitHub</span></a></h3>
-										<ul>
-											<li>Performed feature engineering to generate relevant attributed from 179 thousand ball-by-ball data points of 756 games</li>
-											<li>Developed a Dash application powered by machine learning models to predict scores and win probabilities</li></ul>
-											<a href="http://iplpredict.herokuapp.com" class="button small">Live</a> 
-									</section>
-									<section>
-	
-											<h3>Fakex, A Fake News Identification tool <a href="https://github.com/jkachhadia/Fakex" class="icon brands fa-github" style="color:black"><span class="label">GitHub</span></a></h3>
-											<ul>
-												<li>Implemented the layers of stance detection and machine learning in a hybrid way with 84% accuracy to detect fake news</li>
-												<li>Developed the backend APIs with self-update system and hosted it on the heroku cloud to serve a live chrome extension</li></ul>
-										</section>
-										<section>
-	
-												<h3>Alfred, An AI Messenger Bot <a href="https://github.com/jkachhadia/Alfred" class="icon brands fa-github" style="color:black"><span class="label">GitHub</span></a></h3>
-												<ul>
-													<li>Built a bot on messenger platform of Facebook that helps you set reminders, does small talks and extracts event dates and times from the posters and images</li>
-													<li>Used as a notification system for university students in undergraduate studies</li></ul>
-											</section>
-											<section>
-	
-													<h3>Infinite Scraper <a href="https://github.com/jkachhadia/infinite-scraper" class="icon brands fa-github" style="color:black"><span class="label">GitHub</span></a></h3>
-													<ul>
-														<li>Automated the data extraction process on infinite scrolling platforms like magicbricks.com to collect the housing data using web browser automation</li>
-														<li>Packed the entire process in a form of a desktop PyQt application which is easy to use</li></ul>
-												</section>
+        <!-- Paramount+ Style Hubs -->
+        <section class="brand-hub-row">
+            <div class="brand-card bg-data" role="button" tabindex="0" aria-label="Data Science Hub"
+                data-title="Data Science Hub" data-subtitle="Predictive Modeling & AI"
+                data-desc="Leveraging advanced machine learning and statistical analysis to drive content investment decisions ($1B+) and audience engagement."
+                data-link="/resume/resume.pdf">
+                <div class="brand-title">Data Science</div>
+            </div>
+            <div class="brand-card bg-strategy" role="button" tabindex="0" aria-label="Strategy Hub"
+                data-title="Strategy Hub" data-subtitle="Business Intelligence & Growth"
+                data-desc="Data-driven decision making for global markets. Optimizing content value, user acquisition, and churn reduction strategies."
+                data-link="/resume/resume.pdf">
+                <div class="brand-title">Strategy</div>
+            </div>
+            <div class="brand-card bg-eng" role="button" tabindex="0" aria-label="Engineering Hub"
+                data-title="Engineering Hub" data-subtitle="Scalable Pipelines & Architecture"
+                data-desc="Building robust data infrastructure with Airflow, AWS, and Snowflake. Transforming raw logs into actionable executive dashboards."
+                data-link="/resume/resume.pdf">
+                <div class="brand-title">Engineering</div>
+            </div>
+            <div class="brand-card bg-creative" role="button" tabindex="0" aria-label="Creative Hub"
+                data-title="Creative Hub" data-subtitle="Visual Arts & VFX Background"
+                data-desc="Bridging the gap between art and algorithms. A unique background in Visual Effects informs a creative, human-centric approach to data."
+                data-link="/resume/resume.pdf">
+                <div class="brand-title">Creative</div>
+            </div>
+        </section>
 
-							</div>
-						</div>
-					</section>
-					<section id="medium_wrap" class="wrapper style3 fade-up" style="background:white ">
-							<div class="inner">
-									<div id="medium-widget"></div>
-									<script src="https://medium-widget.pixelpoint.io/widget.js"></script>
-									<script>MediumWidget.Init({renderTo: '#medium-widget', params: {"resource":"https://medium.com/@jkachhadia","postsPerLine":2,"limit":4,"picture":"big","fields":["description","author","claps","publishAt"],"ratio":"original"}})</script>
-								
-						</div>
-					</section>
+        <!-- Row 1: Trending / Impact -->
+        <section id="trending" class="content-row">
+            <h3 class="row-title">Trending Now</h3>
+            <div class="row-container">
+                <div class="row-slider">
+                    <!-- Stat Card 1 -->
+                    <div class="poster-card highlight-card" role="button" tabindex="0"
+                        aria-label="Stat Card: 1 Billion Dollars Driven Investment" data-title="$1B+ Investment"
+                        data-subtitle="#1 in Impact"
+                        data-desc="Directly influenced over $1B in content investment decisions through predictive analytics and audience modeling."
+                        data-link="/resume/resume.pdf">
+                        <div class="bg-zoom-target bg-poster-impact"></div>
+                        <div class="poster-content">
+                            <span class="top-badge">#1 in Impact</span>
+                            <div class="stat-big">$1B+</div>
+                            <div class="stat-detail">Driven Investment</div>
+                        </div>
+                    </div>
+                    <!-- Stat Card 2 -->
+                    <div class="poster-card highlight-card" role="button" tabindex="0"
+                        aria-label="Stat Card: 33+ Research Citations" data-title="33+ Screen Citations"
+                        data-subtitle="Top Rated Research"
+                        data-desc="Research on political social media classification (PoliBERT) has been cited by over 33 academic papers and implementations."
+                        data-link="https://scholar.google.com/citations?user=lNY8EaYAAAAJ&hl=en">
+                        <div class="bg-zoom-target bg-poster-citations"></div>
+                        <div class="poster-content">
+                            <span class="top-badge">Top Rated</span>
+                            <div class="stat-big">33+</div>
+                            <div class="stat-detail">Citations</div>
+                        </div>
+                    </div>
+                    <!-- Stat Card 3 -->
+                    <div class="poster-card highlight-card" role="button" tabindex="0"
+                        aria-label="Rank 1: Paramount+ Data Science Manager"
+                        data-title="Title Character: Data Science Manager" data-subtitle="Paramount+ (2020-Present)"
+                        data-desc="Leading the content intelligence revolution at Paramount+. Managing teams, building recommendation engines, and predicting hits."
+                        data-link="/resume/resume.pdf">
+                        <div class="bg-zoom-target bg-poster-manager"></div>
+                        <spam class="rank-number">1</spam>
+                        <div class="poster-content" style="padding-left: 40px;"> <!-- Push content for number -->
+                            <span class="top-badge">New Season</span>
+                            <div class="stat-big">Paramount+</div>
+                            <div class="stat-detail">Data Science Manager</div>
+                        </div>
+                    </div>
+                    <!-- Stat Card 4 -->
+                    <div class="poster-card highlight-card" role="button" tabindex="0" aria-label="CBS Hack Day Winner"
+                        data-title="CBS Hack Day Winner" data-subtitle="1st Place - 2019"
+                        data-desc="Winner of the annual CBS Interactive Hack Day for creating a real-time automated video highlight generation tool."
+                        data-link="/resume/resume.pdf">
+                        <div class="bg-zoom-target bg-poster-hack"></div>
+                        <div class="poster-content">
+                            <div class="stat-big">CBS</div>
+                            <div class="stat-detail">Hack Day Winner</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-				<!-- Three -->
-					<section id="three" class="wrapper style1 fade-up">
-						<div class="inner">
-							<div class="timeline">
-								<div class="containert leftt">
-								  <div class="contentt" style="color:#5e42a6">
-									<h2 style="color:#5e42a6">May 2020</h2>
-									<p>Master of Science</br>Applied Data Science</br>
-									Syracuse University</p>
-								  </div>
-								</div>
-								<div class="containert rightt">
-								  <div class="contentt" style="color:#5e42a6">
-									<h2 style="color:#5e42a6">May 2018</h2>
-									<p>Bachelor of Technology</br>Computer Engineering</br>
-									NIT Surat</p>
-								  </div>
-								</div>
-								  <div class="containert leftt">
-									<div class="contentt" style="color:#5e42a6">
-									  <h2 style="color:#5e42a6">2014</h2>
-									  <p>Schooling</br>
-									IIT-JEE - AIR 7131</br>Boards - 99.71%iler</p>
-									</div>
-								
-							  </div>
-						</div>
-					</section>
+        <!-- Removed Originals (Projects) as requested -->
 
-			</div> 
+        <!-- Row 3: Speaking & Press -->
+        <section id="speaking" class="content-row">
+            <h3 class="row-title">Critically Acclaimed & Live Events</h3>
+            <div class="row-container">
+                <div class="row-slider">
+                    <!-- Talk 1 -->
+                    <div class="poster-card wide-poster" role="button" tabindex="0"
+                        data-title="Data Science Salon Miami" data-subtitle="Panel Speaker - Sep 17, 2025"
+                        data-desc="Speaking on 'Operationalizing AI at Scale', bridging the gap between prototype and production for enterprise data systems."
+                        data-link="https://www.datascience.salon/miami/jay-kachhadia/">
+                        <div class="bg-zoom-target bg-poster-ds-miami"></div>
+                        <div class="poster-content">
+                            <span class="badge">Coming Soon</span>
+                            <h4>DS Salon Miami</h4>
+                            <p>Sep 17, 2025</p>
+                            <div class="tags"><span>Panel</span><span>AI Scale</span></div>
+                        </div>
+                    </div>
+                    <!-- Data Science UA -->
+                    <div class="poster-card wide-poster" role="button" tabindex="0" data-title="Data Science UA"
+                        data-subtitle="Conference Speaker"
+                        data-desc="Speaker at the Data Science UA Conference, addressing a global audience on AI trends and the practical applications of Large Language Models in industry."
+                        data-link="https://data-science-ua.com/conference/">
+                        <div class="bg-zoom-target bg-poster-ds-ua"></div>
+                        <div class="poster-content">
+                            <span class="badge">Speaker</span>
+                            <h4>DS UA Conference</h4>
+                            <div class="tags"><span>AI Apps</span><span>Scale</span></div>
+                        </div>
+                    </div>
+                    <!-- Codebasics Podcast -->
+                    <div class="poster-card wide-poster" role="button" tabindex="0" data-title="Codebasics Podcast"
+                        data-subtitle="Career Guidance"
+                        data-desc="Featured guest on the Codebasics podcast (1M+ subscribers), discussing the journey from a student to a Data Science Manager in the US. Shared insights on career growth, immigration, and technical skills."
+                        data-link="https://www.youtube.com/watch?v=HqKgsszV-3Y&t=420s">
+                        <div class="bg-zoom-target bg-poster-codebasics"></div>
+                        <div class="poster-content">
+                            <h4>Codebasics</h4>
+                            <p>Podcast Guest</p>
+                            <div class="tags"><span>Podcast</span><span>Career</span></div>
+                        </div>
+                    </div>
+                    <!-- Data Science Salon: Full Stack -->
+                    <div class="poster-card wide-poster" role="button" tabindex="0"
+                        data-title="Data Science Salon: Full Stack" data-subtitle="Invited Speaker"
+                        data-desc="Presenter on 'Full Stack Data Science', advocating for a holistic approach where data scientists own the entire lifecycle from ideation to deployment."
+                        data-link="https://www.youtube.com/watch?v=vpYerPKR6ko">
+                        <div class="bg-zoom-target bg-poster-fullstack"></div>
+                        <div class="poster-content">
+                            <h4>DS Salon Full Stack</h4>
+                            <p>Invited Speaker</p>
+                            <div class="tags"><span>Talk</span><span>Full Stack</span></div>
+                        </div>
+                    </div>
+                    <!-- Talk 2 -->
+                    <div class="poster-card wide-poster" role="button" tabindex="0" data-title="Refresh Miami Feature"
+                        data-subtitle="Press Coverage"
+                        data-desc="Featured story in Refresh Miami covering the innovative work in AI and the transition from VFX artist to Data Science leader in the Miami tech scene."
+                        data-link="https://refreshmiami.com/beyond-the-streaming-wars-the-ai-infrastructure-battle-no-one-talks-about/">
+                        <div class="bg-zoom-target bg-poster-media-refresh"></div>
+                        <div class="poster-content">
+                            <h4>Refresh Miami</h4>
+                            <p>Feature Story</p>
+                            <div class="tags"><span>Press</span><span>Infra</span></div>
+                        </div>
+                    </div>
+                    <!-- Medium 1 -->
+                    <div class="poster-card wide-poster no-link-style" role="button" tabindex="0"
+                        data-title="Towards Data Science" data-subtitle="100K+ Readers"
+                        data-desc="Top Writer for Towards Data Science. Authored definitive guides on Apache Airflow and Data Engineering, read by over 100,000 developers globally."
+                        data-link="https://medium.com/@jkachhadia">
+                        <div class="bg-zoom-target bg-poster-media-towards-ds"></div>
+                        <div class="poster-content">
+                            <span class="badge" style="background-color: var(--accent); color: white;">100K+
+                                Readers</span>
+                            <h4>Towards Data Science</h4>
+                            <p>Top Writer</p>
+                            <div class="tags"><span>Blog</span><span>Airflow</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-		<!-- Footer -->
-			<footer id="footer" class="wrapper style1-alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; Jay Kachhadia. All rights reserved.</li>
-					</ul>
-				</div>
-			</footer>
+        <!-- Row 4: My List / Experience -->
+        <section id="experience" class="content-row">
+            <h3 class="row-title">My Journey</h3>
+            <div class="row-container">
+                <div class="row-slider">
+                    <!-- Paramount+ -->
+                    <div class="poster-card wide-poster xp-card" role="button" tabindex="0" data-title="Paramount+"
+                        data-subtitle="Data Science Manager (2020-Present)"
+                        data-desc="Leading the content intelligence revolution. Managing teams, building recommendation engines, and predicting hits for a global streaming platform. Driving $1B+ in content investment decisions."
+                        data-link="/resume/resume.pdf">
+                        <div class="bg-zoom-target bg-poster-manager"></div>
+                        <div class="poster-content">
+                            <h4>Paramount+</h4>
+                            <p>Data Science Manager</p>
+                            <span class="year">2020-Present</span>
+                        </div>
+                    </div>
+                    <!-- CBS -->
+                    <div class="poster-card wide-poster xp-card" role="button" tabindex="0" data-title="CBS Interactive"
+                        data-subtitle="Data Engineering Intern (2019)"
+                        data-desc="Architected real-time video data pipelines and automated highlight generation tools. Winner of the CBS Hack Day for innovation in video engineering."
+                        data-link="/resume/resume.pdf">
+                        <div class="bg-zoom-target bg-poster-engineer"></div>
+                        <div class="poster-content">
+                            <h4>CBS Interactive</h4>
+                            <p>Data Engineering Intern</p>
+                            <span class="year">2019</span>
+                        </div>
+                    </div>
+                    <!-- Syracuse Research Assistant -->
+                    <div class="poster-card wide-poster xp-card" role="button" tabindex="0"
+                        data-title="Syracuse Research Assistant" data-subtitle="Graduate Researcher (2018-2020)"
+                        data-desc="Worked in the refined research labs at Syracuse University."
+                        data-link="https://www.syracuse.edu/">
+                        <div class="bg-zoom-target bg-poster-alumni"></div>
+                        <div class="poster-content">
+                            <h4>Syracuse Research</h4>
+                            <p>Research Assistant</p>
+                            <span class="year">2018-2020</span>
+                        </div>
+                    </div>
+                    <!-- Syracuse -->
+                    <div class="poster-card wide-poster xp-card" role="button" tabindex="0"
+                        data-title="Syracuse University" data-subtitle="M.S. Data Science (2018-2020)"
+                        data-desc="Graduate Research Assistant conducting advanced research in Machine Learning and Computer Vision. Focused on PoliBERT and social media analysis."
+                        data-link="https://www.syracuse.edu/">
+                        <div class="bg-zoom-target bg-poster-edu-syracuse-wide"></div>
+                        <div class="poster-content">
+                            <h4>Syracuse University</h4>
+                            <p>M.S. Data Science</p>
+                            <span class="year">2018-2020</span>
+                        </div>
+                    </div>
+                    <!-- NIT Surat -->
+                    <div class="poster-card wide-poster xp-card" role="button" tabindex="0" data-title="NIT Surat"
+                        data-subtitle="B.Tech Computer Engineering (2014-2018)"
+                        data-desc="Laid the foundation in computer science and engineering at one of India's premier institutes. Recognized for academic excellence and technical leadership."
+                        data-link="https://www.svnit.ac.in/">
+                        <div class="bg-zoom-target bg-poster-education-nitsurat"></div>
+                        <div class="poster-content">
+                            <h4>NIT Surat</h4>
+                            <p>B.Tech</p>
+                            <span class="year">2014-2018</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+        <!-- Writing & Research Row -->
+        <section id="writing" class="content-row">
+            <h2 class="row-title">Writing & Research</h2>
+            <div class="row-slider">
+                <!-- Refresh Miami (Streaming Wars) -->
+                <div class="poster-card wide-poster" role="button" tabindex="0" data-title="Beyond Streaming Wars"
+                    data-subtitle="Business Thriller"
+                    data-desc="The AI infrastructure battle no one talks about. How predictive algorithms dictate the $500B content economy. A deep dive into the 'billion-dollar black box' of ML investment decisions."
+                    data-link="https://refreshmiami.com/beyond-the-streaming-wars-the-ai-infrastructure-battle-no-one-talks-about/">
+                    <div class="bg-zoom-target bg-poster-media-refresh"></div>
+                    <div class="poster-content">
+                        <span class="top-badge">Featured</span>
+                        <div class="stat-big" style="font-size: 1.5rem;">Beyond Streaming Wars</div>
+                        <div class="stat-detail">Business Thriller</div>
+                        <div class="meta-row">
+                            <span class="match-score">98% Match</span>
+                            <span class="quality">HD</span>
+                        </div>
+                        <p class="description">The invisible AI infrastructure battle no one talks about.</p>
+                    </div>
+                </div>
 
-	</body>
+                <!-- IoT World Today -->
+                <div class="poster-card wide-poster" role="button" tabindex="0" data-title="IoT World Today"
+                    data-subtitle="Industry Feature"
+                    data-desc="Featured alongside industry leaders from FedEx, PepsiCo, and Amazon. Discussing the intersection of AI, IoT, and edge computing in modern media workflows."
+                    data-link="https://www.iotworldtoday.com/iiot/fedex-pepsico-amazon-ford-headline-iot-world-silicon-valley">
+                    <div class="bg-zoom-target bg-poster-media-iot"></div>
+                    <div class="poster-content">
+                        <h4>IoT World Today</h4>
+                        <p>Feature Story</p>
+                        <div class="tags"><span>Press</span><span>Silicon Valley</span></div>
+                    </div>
+                </div>
+
+                <!-- PoliBERT -->
+                <div class="poster-card wide-poster" role="button" tabindex="0"
+                    data-title="PoliBERT: Political Social Media Classification" data-subtitle="Research Paper (2020)"
+                    data-desc="Published research on using BERT models to classify political sentiment and ideology in social media posts with high accuracy."
+                    data-link="https://experts.syr.edu/en/publications/polibert-classifying-political-social-media-messages-with-bert">
+                    <div class="bg-zoom-target bg-poster-polibert"></div>
+                    <div class="poster-content">
+                        <span class="top-badge">Research Paper</span>
+                        <div class="stat-big" style="font-size: 1.5rem;">PoliBERT</div>
+                        <div class="stat-detail">Sci-Fi Thriller</div>
+                        <div class="meta-row">
+                            <span class="match-score">Highly Cited</span>
+                            <span class="quality">4K</span>
+                        </div>
+                        <p class="description">Classifying political social media messages with BERT.</p>
+                    </div>
+                </div>
+
+                <!-- Full Stack Data Science -->
+                <div class="poster-card wide-poster" role="button" tabindex="0" data-title="Full Stack Data Science"
+                    data-subtitle="Medium Article"
+                    data-desc="The Next Gen of Data Scientists. A comprehensive guide on the evolving role of Full Stack Data Scientists."
+                    data-link="https://medium.com/data-science/full-stack-data-science-the-next-gen-of-data-scientists-cohort-82842399646e">
+                    <div class="bg-zoom-target bg-poster-writing-fullstack"></div>
+                    <div class="poster-content">
+                        <h4>Full Stack DS</h4>
+                        <p>Medium Article</p>
+                        <div class="tags"><span>Blog</span><span>Career</span></div>
+                    </div>
+                </div>
+
+                <!-- Airflow Talk -->
+                <div class="poster-card wide-poster" role="button" tabindex="0"
+                    data-title="Scalable AI with Apache Airflow" data-subtitle="Tech Talk"
+                    data-desc="Architecting scalable data pipelines using Apache Airflow to support high-throughput machine learning models in production."
+                    data-link="https://airflow.apache.org/">
+                    <div class="bg-zoom-target bg-poster-airflow"></div>
+                    <div class="poster-content">
+                        <span class="top-badge">Tech Talk</span>
+                        <div class="stat-big" style="font-size: 1.5rem;">Scalable AI</div>
+                        <div class="stat-detail">Apache Airflow</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community & Impact Row -->
+        <section id="community" class="content-row">
+            <h2 class="row-title">Community & Recognition</h2>
+            <div class="row-slider">
+                <!-- National Medals -->
+                <div class="poster-card highlight-card" role="button" tabindex="0" aria-label="National Medals Expert"
+                    data-title="National Medals Expert" data-subtitle="Global Recognition"
+                    data-desc="Recipient of the National Service Medal (NSS) and expert judge for national-level competitions, recognizing significant contributions to community service and technical leadership."
+                    data-link="https://nationalmedals.org/expert/jay-kachhadia/">
+                    <div class="bg-zoom-target bg-poster-national-medals"></div>
+                    <div class="poster-content">
+                        <span class="top-badge">Expert</span>
+                        <div class="stat-big" style="font-size: 1.8rem;">National Medals</div>
+                        <div class="stat-detail">Foundation</div>
+                    </div>
+                </div>
+
+                <!-- SwampHacks Judge -->
+                <div class="poster-card highlight-card" role="button" tabindex="0" aria-label="SwampHacks Judge"
+                    data-title="SwampHacks XI Judge" data-subtitle="Engineering Judge"
+                    data-desc="Invited Mentor for SwampHacks, assisting participants with debugging code, refining project ideas, and deploying solutions in a fast-paced hackathon environment."
+                    data-link="https://swamphacks-xi.devpost.com/">
+                    <div class="bg-zoom-target bg-poster-swamphacks"></div>
+                    <div class="poster-content">
+                        <span class="top-badge">Judge</span>
+                        <div class="stat-big">SwampHacks</div>
+                        <div class="stat-detail">Engineering Judge</div>
+                    </div>
+                </div>
+
+                <!-- MakeHarvard 2021 -->
+                <div class="poster-card highlight-card" role="button" tabindex="0" aria-label="MakeHarvard 2021 Winner"
+                    data-title="MakeHarvard 2021" data-subtitle="Judge"
+                    data-desc="Served as a Judge for MakeHarvard 2021, a global engineering hackathon. Evaluated complex hardware and software projects, providing technical feedback to student teams from top universities."
+                    data-link="https://makeharvard-2021.devpost.com/">
+                    <div class="bg-zoom-target bg-poster-makeharvard"></div>
+                    <div class="poster-content">
+                        <span class="top-badge">Judge</span>
+                        <div class="stat-big" style="font-size: 1.8rem;">MakeHarvard</div>
+                        <div class="stat-detail">2021</div>
+                    </div>
+                </div>
+
+                <!-- Dataiku Feature -->
+                <div class="poster-card highlight-card" role="button" tabindex="0" aria-label="Dataiku Recognition"
+                    data-title="Dataiku Recognition" data-subtitle="Featured by Dataiku"
+                    data-desc="Recognized as a Dataiku Frontrunner for innovative use of the platform in enterprise data science, contributing to the community through leadership and technical expertise."
+                    data-link="https://x.com/dataiku/status/1298752078760882178?s=20">
+                    <div class="bg-zoom-target bg-poster-dataiku"></div>
+                    <div class="poster-content">
+                        <span class="top-badge">Featured</span>
+                        <div class="stat-big">Dataiku</div>
+                        <div class="stat-detail">Community Feature</div>
+                    </div>
+                </div>
+                <!-- Hack Day -->
+                <div class="poster-card highlight-card">
+                    <div class="bg-zoom-target bg-poster-hack"></div>
+                    <div class="poster-content">
+                        <span class="top-badge">Winner</span>
+                        <div class="stat-big">1st Place</div>
+                        <div class="stat-detail">CBS Hack Day</div>
+                    </div>
+                </div>
+
+                <!-- Mentor -->
+                <div class="poster-card highlight-card">
+                    <div class="bg-zoom-target bg-poster-mentor"></div>
+                    <div class="poster-content">
+                        <span class="top-badge">Community</span>
+                        <div class="stat-big">Mentor</div>
+                        <div class="stat-detail">Data Science</div>
+                        <div class="meta-row">
+                            <span class="match-score">Giving Back</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alumni -->
+                <div class="poster-card highlight-card">
+                    <div class="bg-zoom-target bg-poster-alumni"></div>
+                    <div class="poster-content">
+                        <span class="top-badge">Alumni</span>
+                        <div class="stat-big">Syracuse</div>
+                        <div class="stat-detail">Research Assistant</div>
+                        <div class="meta-row">
+                            <span class="match-score">Orange</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer id="contact" style="padding: 50px 4%; color: grey;">
+            <div class="social-links"
+                style="justify-content: flex-start; gap: 20px; font-size: 1.5rem; margin-bottom: 20px;">
+                <a href="https://www.linkedin.com/in/jkachhadia"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.github.com/jkachhadia"><i class="fab fa-github"></i></a>
+                <a href="https://www.medium.com/@jkachhadia"><i class="fab fa-medium"></i></a>
+                <a href="mailto:kachhadiajay@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>&copy; 2026 Jay Kachhadia. All rights reserved.</p>
+        </footer>
+        <!-- Detail Modal (Netflix Style) -->
+        <div id="detail-modal" class="modal-overlay" aria-hidden="true">
+            <div class="modal-card">
+                <button class="modal-close" aria-label="Close Modal">&times;</button>
+                <div class="modal-hero">
+                    <div class="modal-hero-content">
+                        <h2 id="modal-title">Content Title</h2>
+                        <div class="modal-meta">
+                            <span class="match-score">98% Match</span>
+                            <span id="modal-subtitle">2026</span>
+                            <span class="quality">HD</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-info">
+                    <p id="modal-desc">Description of the content goes here.</p>
+                    <div class="modal-actions">
+                        <a href="#" id="modal-link" target="_blank" class="btn-play"><i class="fas fa-play"></i>
+                            Open</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="assets/js/app.js"></script>
+</body>
+
 </html>
