@@ -90,11 +90,88 @@ nav .container-fluid {
 
     nav {
         padding: 15px 4%;
+        background: rgba(0, 10, 18, 0.9);
     }
 
+    /* Mobile Bottom Navigation (App Bar) */
     .nav-links {
-        display: none;
-        /* Hide standard nav on mobile for now to prevent overlap */
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background: rgba(0, 10, 18, 0.95);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        justify-content: space-around;
+        align-items: center;
+        padding: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 1001;
+        margin: 0;
+        list-style: none;
+    }
+
+    .nav-links li {
+        margin: 0;
+    }
+
+    .nav-links a {
+        font-size: 0.65rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        color: #aeaeae;
+        text-decoration: none;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+
+    .nav-links a.active,
+    .nav-links a:hover {
+        color: #ffffff;
+    }
+
+    /* Icons for Mobile Nav */
+    .nav-links a::before {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        font-size: 1.1rem;
+        margin-bottom: 2px;
+        color: inherit;
+    }
+
+    .nav-links li:nth-child(1) a::before {
+        content: "\f015";
+    }
+
+    /* Home */
+    .nav-links li:nth-child(2) a::before {
+        content: "\f201";
+    }
+
+    /* Trending */
+    .nav-links li:nth-child(3) a::before {
+        content: "\f130";
+    }
+
+    /* Speaking */
+    .nav-links li:nth-child(4) a::before {
+        content: "\f03a";
+    }
+
+    /* List */
+    .nav-links li:nth-child(5) a::before {
+        content: "\f56d";
+    }
+
+    /* Resume */
+
+    /* Adjust body to prevent overlap */
+    body {
+        padding-bottom: 70px;
     }
 }
 
@@ -784,6 +861,24 @@ button:focus-visible,
         transform: scale(1.05);
         /* Less aggressive on touch */
     }
+
+    /* Profile Gate Mobile Fix */
+    .profiles-row {
+        flex-wrap: wrap;
+        gap: 15px;
+        width: 90%;
+    }
+
+    .avatar {
+        width: 80px;
+        height: 80px;
+        min-width: 80px;
+        min-height: 80px;
+    }
+
+    .gate-title {
+        font-size: 2.5rem;
+    }
 }
 
 /* Footer Brand Colors - Targeted correctly */
@@ -819,7 +914,7 @@ button:focus-visible,
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(8px);
-    z-index: 1000;
+    z-index: 2000;
     display: flex;
     align-items: center;
     justify-content: center;
