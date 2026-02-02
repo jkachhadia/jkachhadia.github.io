@@ -913,6 +913,12 @@ button:focus-visible,
         padding-bottom: 70px;
     }
 
+    /* Reset negative margin for content to prevent overlap with stacked buttons */
+    .main-view {
+        top: 0;
+        margin-top: 2rem;
+    }
+
     /* Hide specific desktop nav elements */
     nav .nav-links {
         display: none !important;
