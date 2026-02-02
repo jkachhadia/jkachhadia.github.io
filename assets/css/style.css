@@ -839,6 +839,10 @@ button:focus-visible,
 
 /* Mobile - Additional Fixes */
 /* Mobile - Additional Fixes */
+.mobile-nav {
+    display: none;
+}
+
 @media (max-width: 768px) {
     .title-logo {
         font-size: 2.5rem;
